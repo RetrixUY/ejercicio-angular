@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { GeneradorService } from '../generador.service';
 
 @Component({
@@ -8,7 +9,16 @@ import { GeneradorService } from '../generador.service';
 })
 export class MostrarNumeroComponent implements OnInit {
 
-  constructor(public generadorService: GeneradorService) { }
+  subscription: Subscription;
+  numeroAnterior: number | undefined;
+  numeroActual: number | undefined;
+
+  constructor(public generadorService: GeneradorService) {
+    this.subscription = this.generadorService.generador.subscribe((numero) => {
+      this.numeroAnterior = this.numeroActual;
+      this.numeroActual = numero;
+    })
+  }
 
   ngOnInit(): void {
   }

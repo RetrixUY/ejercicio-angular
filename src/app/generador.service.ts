@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeneradorService {
 
-  numeroActual: number | undefined;
+  generador = new BehaviorSubject(Math.floor(Math.random() * (20 - 1)) + 1);
 
   constructor() {
-    this.generarNumero();
   }
 
-  generarNumero(){
-    this.numeroActual =  Math.floor(Math.random() * (20 - 1)) + 1;
+  generarNumero() {
+    this.generador.next(Math.floor(Math.random() * (20 - 1)) + 1);
   }
 }

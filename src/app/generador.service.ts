@@ -6,12 +6,18 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class GeneradorService {
 
-  generador = new BehaviorSubject(Math.floor(Math.random() * (20 - 1)) + 1);
+  numeroActual = this.generarNumero();
+  numeroAnterior: number | undefined;
 
   constructor() {
   }
 
+  actualizarNumero(){
+    this.numeroAnterior = this.numeroActual;
+    this.numeroActual = this.generarNumero();
+  }
+
   generarNumero() {
-    this.generador.next(Math.floor(Math.random() * (20 - 1)) + 1);
+    return Math.floor(Math.random() * (20 - 1)) + 1;
   }
 }

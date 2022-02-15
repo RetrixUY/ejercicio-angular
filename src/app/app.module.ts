@@ -1,28 +1,17 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { LimitarPipe } from './limitar.pipe';
-import { MostrarNumeroComponent } from './mostrar-numero/mostrar-numero.component';
 @NgModule({
   declarations: [
-    AppComponent,
-    LimitarPipe,
-    MostrarNumeroComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(library: FaIconLibrary){
-    library.addIconPacks(fas,far,fab)
-  }
-}
+export class AppModule {}

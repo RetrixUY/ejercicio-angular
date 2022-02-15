@@ -1,1 +1,7 @@
-<app-mostrar-numero></app-mostrar-numero>
+<form [formGroup]="myForm">
+  <input formControlName="password"/>
+  <div *ngIf="myForm.get('password')?.invalid" style="display: flex;flex-direction: column;">
+    <span *ngIf="myForm.get('password')?.errors!['minlength']">La Contraseña debe tener al menos 10 caracteres</span>
+    <span *ngIf="myForm.get('password')?.errors!['numberAndLetter']">La Contraseña debe contener letras y numeros</span>
+  </div>
+</form>

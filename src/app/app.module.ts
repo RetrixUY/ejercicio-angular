@@ -7,10 +7,12 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { LimitarPipe } from './limitar.pipe';
+import { MostrarNumeroComponent } from './mostrar-numero/mostrar-numero.component';
 @NgModule({
   declarations: [
     AppComponent,
     LimitarPipe,
+    MostrarNumeroComponent,
   ],
   imports: [
     BrowserModule,

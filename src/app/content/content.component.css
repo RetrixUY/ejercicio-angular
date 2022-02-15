@@ -1,0 +1,43 @@
+.content {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 1fr;
+  gap: 0% 0%;
+  grid-template-areas: "List Details";
+  grid-area: 'content';
+}
+.properties {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding-bottom: 3em;
+  border-bottom: solid 1px #f2f2f2;
+}
+
+.property {
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  color: #8f95a5;
+}
+.value {
+  word-wrap: break-word;
+}
+.hash {
+  color: #5f53ff;
+  font-weight: bold;
+}
+.details {
+  margin-right: 1em;
+  border-left: solid 1px #f2f2f2;
+  padding-left: 2em;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  color: #5f53ff;
+}

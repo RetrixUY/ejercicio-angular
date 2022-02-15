@@ -1,0 +1,19 @@
+.app-layout {
+  display: grid;
+  grid-template-columns: 15em minmax(0,1fr);
+  grid-template-rows: 15% 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+  height: 100%;
+}
+app-side-bar {
+  grid-area: 1/ 1 / 3 / 2;
+  margin-right: 2em;
+}
+app-header-bar {
+  grid-area: 1 / 2 /2 / 3;
+}
+app-content {
+  grid-area: 2 / 2 / 3 / 3;
+}

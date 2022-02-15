@@ -1,0 +1,27 @@
+.header-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f2f2f2;
+  margin-right: 1em;
+}
+.header-bar > .nav {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em
+}
+.nav * {
+  cursor: pointer;
+}
+
+.link {
+  color: #5f53ff;
+  font-weight: bold;
+}
+
+.icon {
+  color: #8f95a5;
+}

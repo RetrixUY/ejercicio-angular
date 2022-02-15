@@ -1,0 +1,67 @@
+<div [ngSwitch]="item.status">
+  <div class="item pending" *ngSwitchCase="'pending'">
+    <div class="icon">
+      <fa-icon [icon]="['fas',icon]"></fa-icon>
+    </div>
+    <div class="info">
+      <span>{{item.title}}</span>
+      <span>In Proccess...</span>
+    </div>
+    <div class="values">
+      <span class="coin-value">{{item.coinValue}} <span class="coin-symbol">{{item.coinSymbol}}</span></span>
+      <span class="money">{{item.moneyValue}} {{item.moneySymbol}}</span>
+    </div>
+  </div>
+  <div class="item" *ngSwitchCase="'failed'">
+    <div class="icon">
+      <fa-icon [icon]="['fas',icon]"></fa-icon>
+    </div>
+    <div class="info">
+      <span>{{item.title}}</span>
+      <span class="red">Failed</span>
+    </div>
+    <div class="values">
+      <span class="coin-value">{{item.coinValue}} <span class="coin-symbol">{{item.coinSymbol}}</span></span>
+      <span class="money">{{item.moneyValue}} {{item.moneySymbol}}</span>
+    </div>
+  </div>
+  <div class="item" *ngSwitchCase="'canceled'">
+    <div class="icon">
+      <fa-icon [icon]="['fas',icon]"></fa-icon>
+    </div>
+    <div class="info">
+      <span>{{item.title}}</span>
+      <span class="red">Canceled</span>
+    </div>
+    <div class="values">
+      <span class="coin-value">{{item.coinValue}} <span class="coin-symbol">{{item.coinSymbol}}</span></span>
+      <span class="money">{{item.moneyValue}} {{item.moneySymbol}}</span>
+    </div>
+  </div>
+  <div class="item" *ngSwitchCase="'done'">
+    <div class="icon">
+      <fa-icon [icon]="['fas',icon]"></fa-icon>
+    </div>
+    <div class="info">
+      <span>{{item.title}}</span>
+      <span class="date">{{item.date}}</span>
+    </div>
+    <div class="values" [ngSwitch]="item.type">
+      <div *ngSwitchCase="'transfer'">
+        <span class="coin-value">{{item.coinValue}} <span class="coin-symbol">{{item.coinSymbol}}</span></span>
+      </div>
+      <div class="values" *ngSwitchCase="'buy'">
+        <span class="coin-value green">&#x271b; {{item.coinValue}} <span class="coin-symbol">{{item.coinSymbol}}</span></span>
+        <span class="money">{{item.moneyValue}} {{item.moneySymbol}}</span>
+      </div>
+      <div class="values" *ngSwitchCase="'exchange'">
+        <span class="coin-value green">&#x271b; {{item.coinValue}} <span class="coin-symbol">{{item.coinSymbol}}</span></span>
+        <span class="money">{{item.moneyValue}} {{item.moneySymbol}}</span>
+      </div>
+      <div class="values" *ngSwitchCase="'invoice'">
+        <span class="coin-value">{{item.coinValue}} <span class="coin-symbol">{{item.coinSymbol}}</span></span>
+        <span class="money">{{item.moneyValue}} {{item.moneySymbol}}</span>
+      </div>
+    </div>
+  </div>
+</div>

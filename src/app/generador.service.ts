@@ -7,7 +7,9 @@ export class GeneradorService {
 
   numeroActual: number | undefined;
 
-  constructor() { }
+  constructor() {
+    this.generarNumero();
+  }
 
   generarNumero(){
     this.numeroActual =  Math.floor(Math.random() * (20 - 1)) + 1;
